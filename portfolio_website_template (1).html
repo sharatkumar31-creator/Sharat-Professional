@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sharat Kumar | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#020617;color:#e5e7eb;line-height:1.6}
+
+header{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:radial-gradient(circle at top,#0f172a,#020617);
+  padding:20px;
+}
+
+.profile-pic{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #38bdf8;
+  margin-bottom:20px;
+}
+
+h1{font-size:3rem;font-weight:700}
+.tagline{opacity:.8;margin:10px 0 20px}
+
+.buttons a{
+  display:inline-block;
+  margin:8px;
+  padding:10px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+
+.btn-primary{background:#38bdf8;color:#020617}
+.btn-secondary{border:1px solid #38bdf8;color:#38bdf8}
+.buttons a:hover{transform:translateY(-3px)}
+
+.socials a{color:#e5e7eb;margin:0 10px;font-size:1.3rem;transition:.3s}
+.socials a:hover{color:#38bdf8}
+
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:80px 20px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+section.visible{opacity:1;transform:translateY(0)}
+
+h2{font-size:2rem;margin-bottom:20px;color:#38bdf8}
+
+.skills .skill{margin:15px 0}
+.bar{
+  height:10px;
+  background:#1e293b;
+  border-radius:10px;
+  overflow:hidden;
+}
+.bar div{
+  height:100%;
+  background:#38bdf8;
+}
+
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+.card{
+  background:#0f172a;
+  padding:20px;
+  border-radius:12px;
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 10px 25px rgba(0,0,0,.5);
+}
+
+footer{text-align:center;padding:40px;opacity:.6}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="https://via.placeholder.com/150" class="profile-pic" alt="Profile Photo">
+  <h1>Sharat Kumar</h1>
+  <p class="tagline">Integration Developer | Boomi | APIs | Automation</p>
+
+  <div class="buttons">
+    <a href="#projects" class="btn-primary">View Projects</a>
+    <a href="#" class="btn-secondary">Download Resume</a>
+  </div>
+
+  <div class="socials" style="margin-top:15px">
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
+  </div>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am an Integration Developer specializing in Boomi, APIs, and enterprise data automation. 
+    I focus on building reliable integrations, optimizing performance, and solving complex data challenges.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">Boomi
+      <div class="bar"><div style="width:90%"></div></div>
+    </div>
+    <div class="skill">JavaScript
+      <div class="bar"><div style="width:75%"></div></div>
+    </div>
+    <div class="skill">REST APIs
+      <div class="bar"><div style="width:80%"></div></div>
+    </div>
+    <div class="skill">SQL / Oracle
+      <div class="bar"><div style="width:70%"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>HR Data Integration</h3>
+      <p>Developed integrations to process employee data and automate workflows.</p>
+    </div>
+    <div class="card">
+      <h3>Learning Platform Integration</h3>
+      <p>Built APIs and automation for course and user synchronization.</p>
+    </div>
+    <div class="card">
+      <h3>Data Transformation Engine</h3>
+      <p>Created reusable scripts and mappings for enterprise data pipelines.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: your-email@example.com</p>
+  <p>LinkedIn: https://linkedin.com/in/yourprofile</p>
+</section>
+
+<footer>
+  <p>© 2026 Sharat Kumar</p>
+</footer>
+
+<script>
+const sections=document.querySelectorAll("section");
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add("visible");}
+});},{threshold:0.2});
+sections.forEach(section=>observer.observe(section));
+</script>
+
+</body>
+</html>
